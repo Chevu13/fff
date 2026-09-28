@@ -13,30 +13,24 @@ const SERVICES = [
     title: "Lični trening",
     lead: "Trening uživo u Endorfin Trening Centru na Novom Beogradu. Trener je uz vas na svakom treningu.",
     get: ["Program prilagođen vašem cilju i nivou", "Korekcija tehnike u realnom vremenu", "Plan ishrane uz trening"],
-    img: "/img/trening.jpg",
-    alt: "Trening u Endorfin Trening Centru",
-    w: 360,
-    h: 268,
+    img: "/img/licni.jpg",
+    alt: "Trener u Endorfin Trening Centru",
   },
   {
     n: "02",
     title: "Online trening",
     lead: "Isti FFA sistem, bez obzira gde trenirate. Plan, ishrana i kontrola napretka — na daljinu.",
     get: ["Plan treninga za teretanu ili kućne uslove", "Smernice za ishranu i dnevnik ishrane", "Redovno praćenje i korekcije plana"],
-    img: "/img/napredak.jpg",
-    alt: "Praćenje napretka i dnevnik ishrane",
-    w: 360,
-    h: 640,
+    img: "/img/online.jpg",
+    alt: "Trener objašnjava praćenje napretka i dnevnik ishrane",
   },
   {
     n: "03",
     title: "FFA transformacija",
     lead: "Kompletan proces promene tela: od početnog stanja do rezultata koji se vidi na fotografiji.",
     get: ["Fotografije početnog stanja", "Trening, ishrana i praćenje pod jednim planom", "Jasan cilj i merljiv napredak"],
-    img: "/img/before-after.jpg",
-    alt: "Before vs after — FFA transformacija",
-    w: 360,
-    h: 640,
+    img: "/img/transformacija.jpg",
+    alt: "Klijent posle transformacije u Endorfin Trening Centru",
   },
 ];
 
@@ -60,11 +54,10 @@ const STEPS = [
 ];
 
 const FEED = [
-  { src: "/img/put-1.jpg", alt: "Put transformacije — priča klijenta" },
-  { src: "/img/put-2.jpg", alt: "Put transformacije — priča klijenta" },
-  { src: "/img/trener.jpg", alt: "Trenerski rad u Endorfin Trening Centru" },
-  { src: "/img/put-3.jpg", alt: "Put transformacije — priča klijentkinje" },
-  { src: "/img/sta-je-transformacija.jpg", alt: "Šta je za vas transformacija" },
+  { src: "/img/reel-1.jpg", reel: "DQeBQBtCAYZ", tag: "Put transformacije", title: "−40 kg", alt: "Klijent u Endorfin Trening Centru posle transformacije" },
+  { src: "/img/reel-2.jpg", reel: "DTkc_ugCB-J", tag: "Put transformacije", title: "Vreme za promenu", alt: "Klijent priča o svojoj transformaciji" },
+  { src: "/img/reel-3.jpg", reel: "DTU3AisCIxB", tag: "Iz ugla trenera", title: "11 godina trenerskog posla", alt: "Trener u Endorfin Trening Centru" },
+  { src: "/img/reel-4.jpg", reel: "DTcvZdviGat", tag: "Put transformacije", title: "−9 kg", alt: "Klijentkinja u Endorfin Trening Centru" },
 ];
 
 function Cta({ href, children, variant = "red", external = true }: { href: string; children: React.ReactNode; variant?: "red" | "ghost" | "ink"; external?: boolean }) {
@@ -181,8 +174,8 @@ export default function Home() {
               <p data-reveal className="eyebrow flex items-center gap-3 text-ink/60">
                 <span className="h-px w-8 bg-red" /> O FFA sistemu
               </p>
-              <figure data-reveal="img" className="relative mt-8 hidden aspect-[360/285] overflow-hidden lg:block">
-                <Image src="/img/centar.jpg" alt="Endorfin Trening Centar, Novi Beograd" fill sizes="30vw" className="object-cover grayscale" />
+              <figure data-reveal="img" className="relative mt-8 hidden aspect-[4/5] overflow-hidden lg:block">
+                <Image src="/img/trening-uzivo.jpg" alt="Trener sa klijentkinjom na treningu, Endorfin Trening Centar" fill sizes="30vw" className="object-cover" />
               </figure>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
@@ -207,8 +200,8 @@ export default function Home() {
                   ))}
                 </dl>
               </div>
-              <figure data-reveal="img" className="relative mt-10 aspect-[360/285] overflow-hidden lg:hidden">
-                <Image src="/img/centar.jpg" alt="Endorfin Trening Centar, Novi Beograd" fill sizes="100vw" className="object-cover grayscale" />
+              <figure data-reveal="img" className="relative mt-10 aspect-[4/5] overflow-hidden lg:hidden">
+                <Image src="/img/trening-uzivo.jpg" alt="Trener sa klijentkinjom na treningu, Endorfin Trening Centar" fill sizes="100vw" className="object-cover" />
               </figure>
             </div>
           </div>
@@ -258,9 +251,9 @@ export default function Home() {
                 <div className={`md:col-span-5 ${i % 2 ? "md:order-2 md:col-span-5 md:col-start-2" : ""}`}>
                   <figure
                     data-reveal="img"
-                    className={`relative mx-auto overflow-hidden bg-coal ${s.h > s.w ? "aspect-[4/5] max-w-[340px]" : "aspect-[4/3] max-w-md"}`}
+                    className="relative mx-auto aspect-[4/5] max-w-[380px] overflow-hidden bg-coal"
                   >
-                    <Image src={s.img} alt={s.alt} fill sizes="(min-width:768px) 450px, 100vw" className="object-cover transition-transform duration-700 hover:scale-[1.03]" />
+                    <Image src={s.img} alt={s.alt} fill sizes="(min-width:768px) 380px, 100vw" className="object-cover object-top transition-transform duration-700 hover:scale-[1.03]" />
                   </figure>
                 </div>
               </article>
@@ -397,21 +390,27 @@ export default function Home() {
                 Serijal „Put transformacije“, saveti o treningu i ishrani i nove transformacije — sve prvo izlazi na Instagramu.
               </p>
             </div>
-            <ul className="-mx-5 mt-12 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-5 md:overflow-visible md:px-0">
+            <ul className="-mx-5 mt-12 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-4 md:overflow-visible md:px-0">
               {FEED.map((f, i) => (
-                <li key={f.src} data-reveal style={d(i * 0.06)} className="w-[42%] shrink-0 snap-start md:w-auto">
+                <li key={f.src} data-reveal style={d(i * 0.06)} className="w-[62%] shrink-0 snap-start md:w-auto">
                   <a
-                    href={IG}
+                    href={`https://www.instagram.com/reel/${f.reel}/`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${f.alt} — otvori na Instagramu`}
+                    aria-label={`${f.tag}: ${f.title} — pogledaj reel na Instagramu`}
                     className="group relative block aspect-[9/16] overflow-hidden bg-coal"
                   >
-                    <Image src={f.src} alt={f.alt} fill sizes="(min-width:768px) 20vw, 42vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <span className="absolute inset-0 bg-ink/0 transition-colors duration-300 group-hover:bg-ink/30" />
-                    <svg className="absolute right-3 top-3 text-white" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+                    <Image src={f.src} alt={f.alt} fill sizes="(min-width:768px) 25vw, 62vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <span className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
+                    <span className="absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-ink/50 text-white backdrop-blur-sm transition-colors duration-300 group-hover:bg-red">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                        <path d="M7 4v16l13-8z" />
+                      </svg>
+                    </span>
+                    <span className="absolute inset-x-4 bottom-4">
+                      <span className="eyebrow block !text-[0.6rem] text-red">{f.tag}</span>
+                      <span className="display mt-1.5 block text-[1.7rem] text-white">{f.title}</span>
+                    </span>
                   </a>
                 </li>
               ))}
