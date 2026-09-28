@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { Arrow, Header } from "./components/Header";
 import { Compare } from "./components/Compare";
+import { ContactForm } from "./components/ContactForm";
 import { Logo } from "./components/Logo";
 import { Reveal } from "./components/Reveal";
-import { ADDRESS, DM, ENDORFIN, IG, MAPS, NAV } from "./site";
+import { ADDRESS, DM, EMAIL, ENDORFIN, IG, MAPS, NAV } from "./site";
 
 const d = (s: number) => ({ "--d": `${s}s` }) as React.CSSProperties;
 
@@ -436,21 +437,30 @@ export default function Home() {
               <span className="h-px w-8 bg-red" /> Kontakt <span className="h-px w-8 bg-red" />
             </p>
             <h2 data-reveal style={d(0.08)} className="display mt-6 max-w-4xl text-[clamp(3rem,8vw,7rem)]">
-              Prvi korak je jedna poruka.
+              Prvi korak je jedan upit.
             </h2>
             <p data-reveal style={d(0.14)} className="mt-6 max-w-lg text-lg leading-relaxed text-white/75">
-              Napišite nam na Instagramu svoj cilj i da li želite trening uživo ili online. Ostalo dogovaramo zajedno.
+              Popunite kratak upit — cilj i format treninga su dovoljni za početak. Ostalo dogovaramo zajedno.
             </p>
-            <div data-reveal style={d(0.2)} className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
-              <Cta href={DM}>
-                Pošalji poruku
+            <div data-reveal style={d(0.2)} className="mt-12 w-full max-w-2xl border border-white/10 bg-ink/60 p-5 backdrop-blur-sm sm:p-8">
+              <ContactForm />
+            </div>
+            <p data-reveal className="eyebrow mt-12 flex items-center gap-3 text-white/50">
+              <span className="h-px w-8 bg-white/20" /> ili direktno <span className="h-px w-8 bg-white/20" />
+            </p>
+            <div data-reveal className="mt-6 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
+              <Cta href={DM} variant="ghost">
+                Poruka na Instagramu
               </Cta>
               <Cta href={MAPS} variant="ghost">
                 Endorfin T.C. na mapi
               </Cta>
             </div>
-            <p data-reveal style={d(0.26)} className="mt-10 text-sm text-white/60">
-              Endorfin Trening Centar · {ADDRESS}
+            <p data-reveal className="mt-10 text-sm text-white/60">
+              Endorfin Trening Centar · {ADDRESS} ·{" "}
+              <a href={`mailto:${EMAIL}`} className="underline decoration-white/30 underline-offset-4 hover:text-red">
+                {EMAIL}
+              </a>
             </p>
           </div>
         </section>
