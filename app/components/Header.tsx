@@ -29,8 +29,8 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-5 md:h-[4.5rem] md:px-10">
-        <a href="#top" aria-label="FFA — početak stranice" className="relative z-10" onClick={() => setOpen(false)}>
-          <Logo />
+        <a href="#top" aria-label="Endorfin Trening Centar — početak stranice" className="relative z-10" onClick={() => setOpen(false)}>
+          <Logo className="h-11 w-auto md:h-14" preload />
         </a>
 
         <nav aria-label="Glavna navigacija" className="hidden items-center gap-9 lg:flex">

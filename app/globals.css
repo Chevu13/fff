@@ -2,10 +2,10 @@
 
 @theme {
   --color-ink: #0c0c0c;
-  --color-coal: #161616;
-  --color-bone: #f1eee9;
-  --color-ash: #8c8a86;
-  --color-red: #e3261c;
+  --color-coal: #141414;
+  --color-bone: #f2f2f2;
+  --color-ash: #8a8a8a;
+  --color-red: #de2c2c;
   --font-display: var(--font-anton), Impact, sans-serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
 }

@@ -11,16 +11,16 @@ const img = async (name: string) =>
 
 export default async function Image() {
   const [pre, posle] = await Promise.all([img("t1-pre.jpg"), img("t1-posle.jpg")]);
+  const logo = `data:image/png;base64,${(await readFile(join(process.cwd(), "public/logo-endorfin.png"))).toString("base64")}`;
   return new ImageResponse(
     (
-      <div style={{ display: "flex", width: "100%", height: "100%", background: "#0c0c0c", color: "#f1eee9" }}>
+      <div style={{ display: "flex", width: "100%", height: "100%", background: "#0c0c0c", color: "#f2f2f2" }}>
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 64, flex: 1 }}>
-          <div style={{ display: "flex", fontSize: 44, fontWeight: 900, fontStyle: "italic" }}>
-            FF<span style={{ color: "#e3261c" }}>A</span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+          <img src={logo} width={124} height={110} />
           <div style={{ display: "flex", flexDirection: "column", fontSize: 92, fontWeight: 900, lineHeight: 0.95 }}>
             <span>TELO SE MENJA</span>
-            <span style={{ color: "#e3261c" }}>SISTEMOM.</span>
+            <span style={{ color: "#de2c2c" }}>SISTEMOM.</span>
           </div>
           <div style={{ fontSize: 26, color: "#8c8a86" }}>Licni i online trening · Novi Beograd</div>
         </div>

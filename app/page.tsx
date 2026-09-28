@@ -60,10 +60,9 @@ const FEED = [
   { src: "/img/reel-4.jpg", reel: "DTcvZdviGat", tag: "Put transformacije", title: "−9 kg", alt: "Klijentkinja u Endorfin Trening Centru" },
 ];
 
-function Cta({ href, children, variant = "red", external = true }: { href: string; children: React.ReactNode; variant?: "red" | "ghost" | "ink"; external?: boolean }) {
+function Cta({ href, children, variant = "red", external = true }: { href: string; children: React.ReactNode; variant?: "red" | "ghost"; external?: boolean }) {
   const styles = {
     red: "bg-red text-white hover:bg-bone hover:text-ink",
-    ink: "bg-ink text-bone hover:bg-bone hover:text-ink",
     ghost: "border border-current/30 hover:border-current",
   }[variant];
   return (
@@ -114,7 +113,7 @@ export default function Home() {
         <section className="relative overflow-hidden pt-16 md:pt-[4.5rem]">
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-[10%] top-0 h-full w-[60%] bg-[radial-gradient(closest-side,rgba(227,38,28,0.16),transparent)]"
+            className="pointer-events-none absolute -right-[10%] top-0 h-full w-[60%] bg-[radial-gradient(closest-side,rgba(222,44,44,0.18),transparent)]"
           />
           <div className="mx-auto grid max-w-[1400px] gap-10 px-5 pb-12 pt-8 md:px-10 md:pb-20 md:pt-14 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-7 lg:pt-10">
@@ -168,10 +167,10 @@ export default function Home() {
         </section>
 
         {/* SISTEM / INTRO */}
-        <section id="sistem" className="bg-bone text-ink">
+        <section id="sistem" className="border-y border-white/5 bg-coal text-bone">
           <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-20 md:px-10 md:py-32 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-4">
-              <p data-reveal className="eyebrow flex items-center gap-3 text-ink/60">
+              <p data-reveal className="eyebrow flex items-center gap-3 text-bone/60">
                 <span className="h-px w-8 bg-red" /> O FFA sistemu
               </p>
               <figure data-reveal="img" className="relative mt-8 hidden aspect-[4/5] overflow-hidden lg:block">
@@ -183,8 +182,8 @@ export default function Home() {
                 „Adekvatan trening i ishrana deo su lične higijene. <span className="text-red">Estetska transformacija</span> je
                 odraz unutrašnjeg sklada organizma.“
               </blockquote>
-              <div data-reveal style={d(0.1)} className="mt-10 grid gap-8 border-t border-ink/15 pt-8 sm:grid-cols-2">
-                <p className="leading-relaxed text-ink/75">
+              <div data-reveal style={d(0.1)} className="mt-10 grid gap-8 border-t border-white/15 pt-8 sm:grid-cols-2">
+                <p className="leading-relaxed text-bone/75">
                   FFA ne prodaje trening po satu. Prodaje promenu — kroz sistem u kome trening, ishrana i praćenje rade zajedno.
                 </p>
                 <dl className="space-y-4 text-sm">
@@ -193,8 +192,8 @@ export default function Home() {
                     ["Kako", "Uživo ili online"],
                     ["Fokus", "Trening · ishrana · praćenje"],
                   ].map(([k, v]) => (
-                    <div key={k} className="flex justify-between gap-4 border-b border-ink/10 pb-3">
-                      <dt className="text-ink/50">{k}</dt>
+                    <div key={k} className="flex justify-between gap-4 border-b border-white/10 pb-3">
+                      <dt className="text-bone/50">{k}</dt>
                       <dd className="text-right font-medium">{v}</dd>
                     </div>
                   ))}
@@ -208,26 +207,26 @@ export default function Home() {
         </section>
 
         {/* PONUDA */}
-        <section id="ponuda" className="bg-bone text-ink">
+        <section id="ponuda" className="border-y border-white/5 bg-coal text-bone">
           <div className="mx-auto max-w-[1400px] px-5 pb-20 md:px-10 md:pb-32">
-            <div className="flex flex-wrap items-end justify-between gap-6 border-b border-ink pb-6">
+            <div className="flex flex-wrap items-end justify-between gap-6 border-b border-bone/80 pb-6">
               <h2 data-reveal className="display text-[clamp(3rem,9vw,7rem)]">Ponuda</h2>
-              <p data-reveal style={d(0.1)} className="max-w-xs text-sm text-ink/60">
+              <p data-reveal style={d(0.1)} className="max-w-xs text-sm text-bone/60">
                 Tri načina da uđete u FFA sistem. Isti principi — različit format.
               </p>
             </div>
 
             {SERVICES.map((s, i) => (
-              <article key={s.n} className="grid gap-8 border-b border-ink/15 py-12 md:grid-cols-12 md:gap-8 md:py-16">
+              <article key={s.n} className="grid gap-8 border-b border-white/15 py-12 md:grid-cols-12 md:gap-8 md:py-16">
                 <div data-reveal className="md:col-span-1">
                   <span className="display text-2xl text-red">{s.n}</span>
                 </div>
                 <div className={`md:col-span-6 ${i % 2 ? "md:order-3 md:col-span-5 md:col-start-8" : ""}`}>
                   <h3 data-reveal className="display text-[clamp(2.4rem,5vw,3.8rem)]">{s.title}</h3>
-                  <p data-reveal style={d(0.08)} className="mt-4 max-w-md text-lg leading-relaxed text-ink/75">
+                  <p data-reveal style={d(0.08)} className="mt-4 max-w-md text-lg leading-relaxed text-bone/75">
                     {s.lead}
                   </p>
-                  <p data-reveal style={d(0.12)} className="eyebrow mt-8 text-ink/50">
+                  <p data-reveal style={d(0.12)} className="eyebrow mt-8 text-bone/50">
                     Šta dobijate
                   </p>
                   <ul data-reveal style={d(0.16)} className="mt-3 space-y-2.5">
@@ -243,7 +242,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     data-reveal
                     style={d(0.2)}
-                    className="group mt-8 inline-flex items-center gap-2 border-b border-ink pb-1 text-sm font-semibold uppercase tracking-[0.12em] transition-colors hover:border-red hover:text-red"
+                    className="group mt-8 inline-flex items-center gap-2 border-b border-bone/80 pb-1 text-sm font-semibold uppercase tracking-[0.12em] transition-colors hover:border-red hover:text-red"
                   >
                     Pitaj za {s.title.toLowerCase()} <Arrow className="transition-transform group-hover:translate-x-1" />
                   </a>
@@ -321,7 +320,7 @@ export default function Home() {
         </section>
 
         {/* ZAŠTO FFA */}
-        <section className="bg-bone text-ink">
+        <section className="border-y border-white/5 bg-coal text-bone">
           <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-20 md:px-10 md:py-32 lg:grid-cols-12 lg:gap-8">
             <h2 data-reveal className="display text-[clamp(3rem,8vw,6.4rem)] lg:col-span-4">
               Zašto
@@ -330,10 +329,10 @@ export default function Home() {
             </h2>
             <ol className="grid gap-x-10 sm:grid-cols-2 lg:col-span-8">
               {WHY.map(([t, p], i) => (
-                <li key={t} data-reveal style={d((i % 2) * 0.08)} className="border-t border-ink/20 py-7">
+                <li key={t} data-reveal style={d((i % 2) * 0.08)} className="border-t border-white/20 py-7">
                   <span className="text-xs font-semibold text-red">0{i + 1}</span>
                   <h3 className="display mt-3 text-[1.9rem]">{t}</h3>
-                  <p className="mt-2 leading-relaxed text-ink/70">{p}</p>
+                  <p className="mt-2 leading-relaxed text-bone/70">{p}</p>
                 </li>
               ))}
             </ol>
@@ -424,32 +423,36 @@ export default function Home() {
         </section>
 
         {/* FINAL CTA */}
-        <section id="kontakt" className="relative overflow-hidden bg-red text-white">
-          <span
+        <section id="kontakt" className="relative overflow-hidden border-t-4 border-red bg-ink text-white">
+          <div
             aria-hidden
-            className="display pointer-events-none absolute -bottom-[0.18em] -right-[0.04em] select-none text-[42vw] italic leading-none text-black/10 md:text-[30vw]"
-          >
-            FFA
-          </span>
+            className="pointer-events-none absolute -right-[15%] top-1/2 h-[140%] w-[70%] -translate-y-1/2 bg-[radial-gradient(closest-side,rgba(222,44,44,0.28),transparent)]"
+          />
+          <div data-reveal className="absolute right-10 top-1/2 hidden w-[min(34vw,460px)] -translate-y-1/2 lg:block">
+            <Logo className="h-auto w-full" />
+          </div>
           <div className="relative mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-32">
-            <p data-reveal className="eyebrow flex items-center gap-3 text-white/80">
-              <span className="h-px w-8 bg-white" /> Kontakt
+            <div data-reveal className="mb-10 w-32 lg:hidden">
+              <Logo className="h-auto w-full" />
+            </div>
+            <p data-reveal className="eyebrow flex items-center gap-3 text-white/70">
+              <span className="h-px w-8 bg-red" /> Kontakt
             </p>
-            <h2 data-reveal style={d(0.08)} className="display mt-6 max-w-5xl text-[clamp(3rem,9vw,7.6rem)]">
+            <h2 data-reveal style={d(0.08)} className="display mt-6 max-w-3xl text-[clamp(3rem,8vw,7rem)]">
               Prvi korak je jedna poruka.
             </h2>
-            <p data-reveal style={d(0.14)} className="mt-6 max-w-lg text-lg leading-relaxed text-white/90">
+            <p data-reveal style={d(0.14)} className="mt-6 max-w-lg text-lg leading-relaxed text-white/75">
               Napišite nam na Instagramu svoj cilj i da li želite trening uživo ili online. Ostalo dogovaramo zajedno.
             </p>
             <div data-reveal style={d(0.2)} className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Cta href={DM} variant="ink">
+              <Cta href={DM}>
                 Pošalji poruku
               </Cta>
               <Cta href={MAPS} variant="ghost">
                 Endorfin T.C. na mapi
               </Cta>
             </div>
-            <p data-reveal style={d(0.26)} className="mt-10 text-sm text-white/85">
+            <p data-reveal style={d(0.26)} className="mt-10 text-sm text-white/60">
               Endorfin Trening Centar · {ADDRESS}
             </p>
           </div>
@@ -460,7 +463,8 @@ export default function Home() {
       <footer className="bg-ink">
         <div className="mx-auto grid max-w-[1400px] gap-10 px-5 py-14 md:grid-cols-12 md:px-10 md:py-16">
           <div className="md:col-span-4">
-            <Logo tagline />
+            <Logo className="h-24 w-auto" />
+            <p className="mt-4 text-[0.62rem] font-semibold italic tracking-[0.18em] text-ash">be wise and stay strong</p>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-ash">Sistem za telesne transformacije. Lični i online trening.</p>
           </div>
           <nav aria-label="Navigacija u podnožju" className="md:col-span-3">
