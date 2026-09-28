@@ -426,25 +426,22 @@ export default function Home() {
         <section id="kontakt" className="relative overflow-hidden border-t-4 border-red bg-ink text-white">
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-[15%] top-1/2 h-[140%] w-[70%] -translate-y-1/2 bg-[radial-gradient(closest-side,rgba(222,44,44,0.28),transparent)]"
+            className="pointer-events-none absolute left-1/2 top-0 h-[90%] w-[110%] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(222,44,44,0.26),transparent)] md:w-[70%]"
           />
-          <div data-reveal className="absolute right-10 top-1/2 hidden w-[min(34vw,460px)] -translate-y-1/2 lg:block">
-            <Logo className="h-auto w-full" />
-          </div>
-          <div className="relative mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-32">
-            <div data-reveal className="mb-10 w-32 lg:hidden">
+          <div className="relative mx-auto flex max-w-[1400px] flex-col items-center px-5 py-20 text-center md:px-10 md:py-28">
+            <div data-reveal className="w-40 md:w-56">
               <Logo className="h-auto w-full" />
             </div>
-            <p data-reveal className="eyebrow flex items-center gap-3 text-white/70">
-              <span className="h-px w-8 bg-red" /> Kontakt
+            <p data-reveal className="eyebrow mt-10 flex items-center gap-3 text-white/70">
+              <span className="h-px w-8 bg-red" /> Kontakt <span className="h-px w-8 bg-red" />
             </p>
-            <h2 data-reveal style={d(0.08)} className="display mt-6 max-w-3xl text-[clamp(3rem,8vw,7rem)]">
+            <h2 data-reveal style={d(0.08)} className="display mt-6 max-w-4xl text-[clamp(3rem,8vw,7rem)]">
               Prvi korak je jedna poruka.
             </h2>
             <p data-reveal style={d(0.14)} className="mt-6 max-w-lg text-lg leading-relaxed text-white/75">
               Napišite nam na Instagramu svoj cilj i da li želite trening uživo ili online. Ostalo dogovaramo zajedno.
             </p>
-            <div data-reveal style={d(0.2)} className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div data-reveal style={d(0.2)} className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
               <Cta href={DM}>
                 Pošalji poruku
               </Cta>
